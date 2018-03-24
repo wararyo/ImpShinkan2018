@@ -10,11 +10,14 @@ public class CabbageCabbage : MonoBehaviour {
 	public int cutCountGoal = 40;
 	public UnityEvent onCutAll;
 
-	public List<Sprite> cabbageSprites;
+    public ParticleSystem burst;
+    public ParticleSystem sengiri;
+
+    public List<Sprite> cabbageSprites;
 
 	bool isCutAll = false;
 
-	SpriteRenderer renderer;
+    SpriteRenderer renderer;
 
 	// Use this for initialization
 	void Start () {
@@ -27,15 +30,21 @@ public class CabbageCabbage : MonoBehaviour {
 	}
 
 	public void Cut() {
-		cutCount++;
-		int spriteIndex = (int)Mathf.Lerp (0, cabbageSprites.Count - 1, (float)cutCount / cutCountGoal);
-		//Debug.Log (hoge);
-		renderer.sprite = cabbageSprites [spriteIndex];
-		if (cutCountGoal <= cutCount) {
-			if (isCutAll == false) {
-				onCutAll.Invoke ();
-				isCutAll = true;
-			}
-		}
+        if (isCutAll == false)
+        {
+            //ParticleEffect
+            burst.Emit(24);
+            sengiri.Emit(32);
+
+            cutCount++;
+            int spriteIndex = (int)Mathf.Lerp(0, cabbageSprites.Count - 1, (float)cutCount / cutCountGoal);
+            //Debug.Log (hoge);
+            renderer.sprite = cabbageSprites[spriteIndex];
+            if (cutCountGoal <= cutCount)
+            {
+                onCutAll.Invoke();
+                isCutAll = true;
+            }
+        }
 	}
 }

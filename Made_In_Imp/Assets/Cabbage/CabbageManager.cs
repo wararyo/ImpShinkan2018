@@ -9,6 +9,7 @@ public class CabbageManager : MonoBehaviour {
 
 	public CabbageCabbage cabbage1P;
 	public CabbageCabbage cabbage2P;
+    public CabbageGirl cabbageGirl1P, cabbageGirl2P;
 
 	// Use this for initialization
 	void Start () {
@@ -20,11 +21,21 @@ public class CabbageManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown(0)){//Input.GetButtonDown ("1A")) {
 			cabbage1P.Cut();
-		}
+            cabbageGirl1P.Down();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            cabbageGirl1P.Up();
+        }
 		if (Input.GetMouseButtonDown (1)) {
 			cabbage2P.Cut ();
-		}
-	}
+            cabbageGirl2P.Down();
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            cabbageGirl2P.Up();
+        }
+    }
 
 	public void OnCutSucceed1P() {
 		Debug.Log ("キャベツ1P切った");
