@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LayerManager : MonoBehaviour {
+public class MeteoManager : MonoBehaviour {
+
+	public MeteoMeteo meteo;
+	private int count;
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +14,5 @@ public class LayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }
