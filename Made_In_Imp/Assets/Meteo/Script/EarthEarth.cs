@@ -15,6 +15,6 @@ public class EarthEarth : MonoBehaviour {
 	}
 
 	public void move (float x, float y){
-		transform.position += new Vector3 (x*0.3f, y*0.3f, 0);
+		transform.position += new Vector3 (x*0.2f, y*0.2f, 0);
 	}
 }
