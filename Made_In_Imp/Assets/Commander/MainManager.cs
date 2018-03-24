@@ -7,7 +7,7 @@ public class MainManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (coroutineWork);
+		StartCoroutine (coroutineWork());
 	}
 	
 	// Update is called once per frame
@@ -16,6 +16,6 @@ public class MainManager : MonoBehaviour {
 	}
 
 	IEnumerator coroutineWork(){
-		yield new WaitForSecondsRealtime(8);
+		yield return new WaitForSecondsRealtime(8);
 	}
 }
