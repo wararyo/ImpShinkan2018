@@ -25,6 +25,8 @@ public class MeteoMeteo : MonoBehaviour {
 	void Update () {
 		Vector3 unsa = speed * angle;
 		transform.position += unsa;
+		Vector3 aho = new Vector3 (0, 0, speed * 30);
+		transform.eulerAngles += aho;
 	}
 
 }
