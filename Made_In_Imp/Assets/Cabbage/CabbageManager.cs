@@ -28,9 +28,11 @@ public class CabbageManager : MonoBehaviour {
 
 	public void OnCutSucceed1P() {
 		Debug.Log ("キャベツ1P切った");
+		Commander.Succeed (0);
 	}
 
 	public void OnCutSucceed2P() {
 		Debug.Log ("キャベツ2P切った");
+		Commander.Succeed (1);
 	}
 }
