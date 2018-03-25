@@ -66,10 +66,11 @@ void Update(){
 それぞれのキーを表す文字列については、Edit>Project Settings>Inputをご覧ください。
 
 ## ミニゲーム定義ファイルの作成
-それぞれのミニゲームフォルダ内にてCreate>MiniGame Definitionよりミニゲーム定義ファイルを作成してください。
+それぞれのミニゲームフォルダ内にてCreate>MiniGame Definitionよりミニゲーム定義ファイルを作成してください。  
 ![メニュー](Images/minigameMenu.png)
 
-インスペクターにてNameとScene Nameを記入します。 Nameはミニゲーム名(日本語可, テキトーでいいです)、Scene Nameは読み込んでほしいSceneの名前です。
+インスペクターにてNameとScene Nameを記入します。 Nameはミニゲーム名(日本語可, テキトーでいいです)、Scene Nameは読み込んでほしいSceneの名前です。  
+![インスペクター](Images/minigameInspector.PNG)
 
 ## そのほかTips
 気づいたことがある人は誰でも書き込んでください。
