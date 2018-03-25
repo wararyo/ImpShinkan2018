@@ -5,8 +5,7 @@ using UnityEngine;
 public class CabbageGirl : MonoBehaviour {
 
     public Sprite up, down;
-
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
 
 	// Use this for initialization
 	void Start () {

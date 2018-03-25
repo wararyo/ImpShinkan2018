@@ -16,12 +16,11 @@ public class CabbageCabbage : MonoBehaviour {
     public List<Sprite> cabbageSprites;
 
 	bool isCutAll = false;
-
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
 
 	// Use this for initialization
 	void Start () {
-		renderer = GetComponent<SpriteRenderer> ();
+        renderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
