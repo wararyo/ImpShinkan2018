@@ -5,6 +5,7 @@ using UnityEngine;
 public class HighFiveManager : MonoBehaviour {
 
     public HighFiveHand hand1P;
+    public HighFiveHand hand2P;
 
 	// Use this for initialization
 	void Start () {
@@ -15,13 +16,36 @@ public class HighFiveManager : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            if (hand1P.HighFive() == true)
+            if (hand1P.enabled)
             {
-                Debug.Log("1Pハイタッチ成功や");
+                hand1P.enabled = false;
+                if (hand1P.HighFive() == true)
+                {
+                    Commander.Succeed(0);
+                    Debug.Log("1Pハイタッチ成功や");
+                }
+                else
+                {
+                    Commander.Failed(0);
+                    Debug.Log("1Pハイタッチ失敗や");
+                }
             }
-            else
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (hand2P.enabled)
             {
-                Debug.Log("1Pハイタッチ失敗や");
+                hand2P.enabled = false;
+                if (hand2P.HighFive() == true)
+                {
+                    Commander.Succeed(1);
+                    Debug.Log("2Pハイタッチ成功や");
+                }
+                else
+                {
+                    Commander.Failed(1);
+                    Debug.Log("2Pハイタッチ失敗や");
+                }
             }
         }
 	}
