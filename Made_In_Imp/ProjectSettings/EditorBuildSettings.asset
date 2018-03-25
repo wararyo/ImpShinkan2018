@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/main.unity
+    guid: 91fc22623a66a48b08bb98b7081c1a34
+  - enabled: 1
+    path: Assets/Meteo/Meteo.unity
+    guid: 6b3100961908347e18d2d26d0ac52ad0
+  - enabled: 1
+    path: Assets/Cabbage/Cabbage.unity
+    guid: 14e0c95c84f3040ca965c389bbd33f1a
