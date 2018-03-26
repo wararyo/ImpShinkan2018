@@ -667,6 +667,16 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114096720475499686, guid: e7fca3be1297d7f409475ba9cb54b4f9,
+        type: 2}
+      propertyPath: onCutAll.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 745705098}
+    - target: {fileID: 114096720475499686, guid: e7fca3be1297d7f409475ba9cb54b4f9,
+        type: 2}
+      propertyPath: onCutAll.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCutSucceed2P
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7fca3be1297d7f409475ba9cb54b4f9, type: 2}
   m_IsPrefabParent: 0
