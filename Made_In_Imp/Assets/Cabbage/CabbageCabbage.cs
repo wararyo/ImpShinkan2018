@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,15 +10,19 @@ public class CabbageCabbage : MonoBehaviour {
 	public int cutCountGoal = 40;
 	public UnityEvent onCutAll;
 
-	public List<Sprite> cabbageSprites;
+    public ParticleSystem burst;
+    public ParticleSystem sengiri;
+
+    public List<Sprite> cabbageSprites;
 
 	bool isCutAll = false;
-
-	SpriteRenderer renderer;
+    new SpriteRenderer renderer;
+    AudioSource se;
 
 	// Use this for initialization
 	void Start () {
 		renderer = GetComponent<SpriteRenderer> ();
+        se = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -27,15 +31,23 @@ public class CabbageCabbage : MonoBehaviour {
 	}
 
 	public void Cut() {
-		cutCount++;
-		int spriteIndex = (int)Mathf.Lerp (0, cabbageSprites.Count - 1, (float)cutCount / cutCountGoal);
-		//Debug.Log (hoge);
-		renderer.sprite = cabbageSprites [spriteIndex];
-		if (cutCountGoal <= cutCount) {
-			if (isCutAll == false) {
-				onCutAll.Invoke ();
-				isCutAll = true;
-			}
-		}
+        if (isCutAll == false)
+        {
+            //ParticleEffect
+            burst.Emit(24);
+            sengiri.Emit(32);
+
+            se.Play();
+
+            cutCount++;
+            int spriteIndex = (int)Mathf.Lerp(0, cabbageSprites.Count - 1, (float)cutCount / cutCountGoal);
+            //Debug.Log (hoge);
+            renderer.sprite = cabbageSprites[spriteIndex];
+            if (cutCountGoal <= cutCount)
+            {
+                onCutAll.Invoke();
+                isCutAll = true;
+            }
+        }
 	}
 }
