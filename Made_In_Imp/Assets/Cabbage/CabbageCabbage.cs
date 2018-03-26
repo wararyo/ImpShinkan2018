@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,8 +16,7 @@ public class CabbageCabbage : MonoBehaviour {
     public List<Sprite> cabbageSprites;
 
 	bool isCutAll = false;
-
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
     AudioSource se;
 
 	// Use this for initialization
