@@ -18,10 +18,12 @@ public class CabbageCabbage : MonoBehaviour {
 	bool isCutAll = false;
 
     SpriteRenderer renderer;
+    AudioSource se;
 
 	// Use this for initialization
 	void Start () {
 		renderer = GetComponent<SpriteRenderer> ();
+        se = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -35,6 +37,8 @@ public class CabbageCabbage : MonoBehaviour {
             //ParticleEffect
             burst.Emit(24);
             sengiri.Emit(32);
+
+            se.Play();
 
             cutCount++;
             int spriteIndex = (int)Mathf.Lerp(0, cabbageSprites.Count - 1, (float)cutCount / cutCountGoal);
