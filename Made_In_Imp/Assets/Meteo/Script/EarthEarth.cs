@@ -14,6 +14,12 @@ public class EarthEarth : MonoBehaviour {
 		
 	}
 
+	void OnTriggerEnter2D (Collider2D meteo) {
+		Debug.Log ("unsa");
+		if(meteo.gameObject.tag == "finish")
+			GetComponent<SpriteRenderer>().color = new Color(1,0,0,0);
+	}
+
 	public void move (float x, float y){
 		transform.position += new Vector3 (x*0.2f, y*0.2f, 0);
 	}
