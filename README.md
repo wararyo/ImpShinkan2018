@@ -49,7 +49,7 @@ Commander.Failed(1);
 
 なお、一回SucceedもしくはFailedを実行した場合、以降の成功/失敗の変更はできません。
 すなわち、
-```
+``` C#
 Commander.Succeed(0);
 Commander.Failed(0);
 ```
@@ -90,7 +90,7 @@ void Update(){
 ### 最後までFailしなかったら勝利にしたい
 避けゲーなどで最後まで耐えたら成功、としたい場合は`Commander.onMinigameEnd`を用います。
 
-```
+``` C#
 void Start () {
     Commander.onMinigameEnd += onMinigameEnd;
 }
@@ -101,7 +101,7 @@ void onMinigameEnd(){
 }
 ```
 もちろんラムダ式を用いてもOKです。
-```
+``` C#
 void Start () {
     Commander.onMinigameEnd += () => {
         Commander.Succeed(0);
