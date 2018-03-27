@@ -348,7 +348,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 53668606}
   m_LocalRotation: {x: -0, y: -0, z: -0.960776, w: 0.27732584}
-  m_LocalPosition: {x: 5.92, y: -9.35, z: 0}
+  m_LocalPosition: {x: 5.9, y: -9.32, z: 0}
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
   m_Children: []
   m_Father: {fileID: 57821424}
@@ -1745,7 +1745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600358764}
   m_Layer: 0
-  m_Name: LeftGround
+  m_Name: LeftImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2087,7 +2087,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 690580994}
   m_LocalRotation: {x: -0, y: -0, z: -0.960776, w: 0.27732584}
-  m_LocalPosition: {x: 5.92, y: -9.35, z: 0}
+  m_LocalPosition: {x: 5.9, y: -9.32, z: 0}
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
   m_Children: []
   m_Father: {fileID: 9023251}
@@ -2418,6 +2418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfedfdb21dd360c409e100260cc33070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground1: {fileID: 9023249}
+  ground2: {fileID: 57821423}
+  rotateSpeed: 0.1
 --- !u!1 &754120597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,7 +2445,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754120597}
   m_LocalRotation: {x: -0, y: -0, z: 0.8540906, w: 0.5201244}
-  m_LocalPosition: {x: -9.8, y: -6.23, z: 0}
+  m_LocalPosition: {x: -9.75, y: -6.2, z: 0}
   m_LocalScale: {x: 1.0000007, y: 1.0000007, z: 1}
   m_Children: []
   m_Father: {fileID: 9023251}
@@ -2812,7 +2815,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 862031139}
   m_LocalRotation: {x: -0, y: -0, z: 0.8540906, w: 0.5201244}
-  m_LocalPosition: {x: -9.8, y: -6.23, z: 0}
+  m_LocalPosition: {x: -9.771, y: -6.215, z: 0}
   m_LocalScale: {x: 1.0000007, y: 1.0000007, z: 1}
   m_Children: []
   m_Father: {fileID: 57821424}
@@ -5546,7 +5549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060308024}
   m_Layer: 0
-  m_Name: RightGround
+  m_Name: RightImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
