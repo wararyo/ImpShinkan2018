@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public static class Commander {
 
@@ -12,6 +13,8 @@ public static class Commander {
 
 	static resultState[] result;
     static public int[] score;
+
+	public static Action onMinigameEnd = () => {};
 
     public static void Initialize()
     {
@@ -37,11 +40,13 @@ public static class Commander {
 	}
 
 	public static void Succeed(int player) {
-		result [player] = resultState.Succeed;
+		if (result [player] == resultState.Undefined)
+			result [player] = resultState.Succeed;
 	}
 
 	public static void Failed(int player) {
-		result [player] = resultState.Failed;
+		if (result [player] == resultState.Undefined)
+			result [player] = resultState.Failed;
 	}
 
     public static void AddScore()

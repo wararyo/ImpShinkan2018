@@ -35,13 +35,13 @@ public class MainManager : MonoBehaviour {
             AsyncOperation async = SceneManager.LoadSceneAsync(mg.sceneName,LoadSceneMode.Additive);
             async.allowSceneActivation = false;
             yield return new WaitForSecondsRealtime(4);
-            Debug.Log("hoge");
             //yield return async;これつけたら永遠に読み込み終わらないのなんでや
             //4秒経ったらミニゲーム開始
             Commander.ResetResultState();
             timeCounter.StartCounting(8);
             async.allowSceneActivation = true;
             yield return new WaitForSecondsRealtime(8);
+			Commander.onMinigameEnd ();//イベント発行
             SceneManager.UnloadSceneAsync(mg.sceneName);
             //ミニゲーム終了後
             i++;
