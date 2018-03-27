@@ -16,11 +16,11 @@ public class HamburgerGu : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision col) {
-        Debug.Log("!");
+    void OnCollisionEnter2D(Collision2D col) {
         if (isCatched) return;
         transform.parent = col.transform;
-        GetComponent<Rigidbody2D>().isKinematic = true;
+        var rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         isCatched = true;
     }
 }

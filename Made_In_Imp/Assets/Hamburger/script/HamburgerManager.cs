@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class HamburgerManager : MonoBehaviour {
 
@@ -18,8 +19,9 @@ public class HamburgerManager : MonoBehaviour {
 	}
 
     IEnumerator GameCoroutine() {
-        for(int i = 0; i < gu_sprites.Count; i++) {
-            ProvideGu(i);
+        var order = new int[] { 0, 1, 2, 3, 4, 5, 6 }.OrderBy(i => System.Guid.NewGuid()).Concat(new int[] { 7 }).ToArray();
+        for (int i = 0; i < order.Length; i++) {
+            ProvideGu(order[i]);
             yield return new WaitForSeconds(1);
         }
     }
