@@ -47,6 +47,14 @@ Commander.Failed(0);
 Commander.Failed(1);
 ```
 
+なお、一回SucceedもしくはFailedを実行した場合、以降の成功/失敗の変更はできません。
+すなわち、
+```
+Commander.Succeed(0);
+Commander.Failed(0);
+```
+とした場合、1Pはミニゲームに成功した扱いとなります。
+
 ミニゲーム終了までにどちらも実行されなければ失敗扱いとなります。
 
 ## 入力
@@ -78,6 +86,29 @@ void Update(){
 ### Spriteをドットbyドット表示にする方法
 カメラのSizeを5.4にします。
 5.4というのは[画面の縦解像度1080]/2/[SpriteのPixel Per Unitの初期値100]により算出された値です。
+
+### 最後までFailしなかったら勝利にしたい
+避けゲーなどで最後まで耐えたら成功、としたい場合は`Commander.onMinigameEnd`を用います。
+
+```
+void Start () {
+    Commander.onMinigameEnd += onMinigameEnd;
+}
+
+void onMinigameEnd(){
+    Commander.Succeed(0);
+    Commander.Succeed(1);
+}
+```
+もちろんラムダ式を用いてもOKです。
+```
+void Start () {
+    Commander.onMinigameEnd += () => {
+        Commander.Succeed(0);
+        Commander.Succeed(1);
+    };
+}
+```
 
 ## スタッフ(敬称略)
 ### グラフィック
