@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EarthEarth : MonoBehaviour {
 
+	bool dead;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,12 +17,14 @@ public class EarthEarth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D meteo) {
-		Debug.Log ("unsa");
-		if(meteo.gameObject.tag == "finish")
-			GetComponent<SpriteRenderer>().color = new Color(1,0,0,0);
+		if (meteo.gameObject.tag == "Finish") {
+			Debug.Log ("unsa");
+			GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
+			dead = true;
+		}
 	}
 
 	public void move (float x, float y){
-		transform.position += new Vector3 (x*0.2f, y*0.2f, 0);
+		if(!dead) transform.position += new Vector3 (x*0.2f, y*0.2f, 0);
 	}
 }
