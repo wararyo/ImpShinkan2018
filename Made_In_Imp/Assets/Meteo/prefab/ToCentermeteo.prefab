@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4260920023581272}
   - component: {fileID: 212069749616947704}
-  - component: {fileID: 114176227180295064}
+  - component: {fileID: 114800752495220782}
   - component: {fileID: 58043884205569480}
   - component: {fileID: 50101932987921072}
-  m_Layer: 0
-  m_Name: meteo
+  m_Layer: 9
+  m_Name: ToCentermeteo
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.7
---- !u!114 &114176227180295064
+--- !u!114 &114800752495220782
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,14 +86,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831668101291438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fdc0423958f46bfb27275a69b00e4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3289ff84abc644b09be1c133fd211459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   start: {x: 0, y: 0}
-  aim: {x: 0, y: 0}
   angle: {x: 0, y: 0}
-  speed: 0.15
-  aim_range: 3
+  speed: 0.06
 --- !u!212 &212069749616947704
 SpriteRenderer:
   m_ObjectHideFlags: 1
