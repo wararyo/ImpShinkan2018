@@ -10,6 +10,7 @@ public class TyakurikuManager : MonoBehaviour {
 
 	private bool tyakuriku1P,tyakuriku2P;
 	private float x1P,x2P;
+	private float direction;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +25,8 @@ public class TyakurikuManager : MonoBehaviour {
 
 
 		if (tyakuriku1P == false) {
-			ground1.RotateGround();
+			direction = 1;
+			ground1.RotateGround(direction);
 			player1.Rakka();
 			player1.MovePlayer (x1P);
 
@@ -33,7 +35,8 @@ public class TyakurikuManager : MonoBehaviour {
 		x2P = Input.GetAxisRaw ("2Horizontal");
        
 		if (tyakuriku2P == false) {
-			ground2.RotateGround();
+			direction = -1;
+			ground2.RotateGround(direction);
 			player2.Rakka();
 			player2.MovePlayer (x2P);
 		}

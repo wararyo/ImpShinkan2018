@@ -41,7 +41,6 @@ public class RakkaPlayer : MonoBehaviour {
 
 
 	private void OnCollisionEnter2D(Collision2D col){
-		Debug.Log ("hi");
 		if (col.gameObject == ground) {
 			//成功
 			land.Invoke ();

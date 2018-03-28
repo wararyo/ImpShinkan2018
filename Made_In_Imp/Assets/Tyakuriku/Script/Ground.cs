@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ground : MonoBehaviour {
 
     public GameObject ground;
-    public float rotateSpeed = 1f;
+    public float rotateSpeed = 10f;
     private Vector3 rotateAngle;
 
     // Use this for initialization
@@ -18,8 +18,8 @@ public class Ground : MonoBehaviour {
 		
 	}
 
-    public void RotateGround()
+	public void RotateGround(float direction)
     {
-        ground.transform.Rotate(rotateAngle);
+        ground.transform.Rotate(rotateAngle*direction);
     }
 }
