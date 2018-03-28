@@ -6,6 +6,8 @@ public class HighFiveManager : MonoBehaviour {
 
     public HighFiveHand hand1P;
     public HighFiveHand hand2P;
+	public HighFiveSun sun1P;
+	public HighFiveSun sun2P;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,7 @@ public class HighFiveManager : MonoBehaviour {
                 if (hand1P.HighFive() == true)
                 {
                     Commander.Succeed(0);
+					sun1P.Show ();
                     Debug.Log("1Pハイタッチ成功や");
                 }
                 else
@@ -39,6 +42,7 @@ public class HighFiveManager : MonoBehaviour {
                 if (hand2P.HighFive() == true)
                 {
                     Commander.Succeed(1);
+					sun2P.Show ();
                     Debug.Log("2Pハイタッチ成功や");
                 }
                 else
