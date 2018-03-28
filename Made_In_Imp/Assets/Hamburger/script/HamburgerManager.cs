@@ -26,7 +26,7 @@ public class HamburgerManager : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < order.Length; i++) {
             ProvideGu(order[i]);
-            yield return new WaitForSeconds(1);　//一秒おきに...
+            yield return new WaitForSeconds(0.8f);　//一定間隔に...
         }
         JudgeResult(); //全部具材が乗ったか判定
     }
