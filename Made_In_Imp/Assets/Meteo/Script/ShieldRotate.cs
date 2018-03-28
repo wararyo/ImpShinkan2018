@@ -6,8 +6,11 @@ public class ShieldRotate : MonoBehaviour {
 
 	public float speed;
 	public EarthLREarth Earth;
-	//public 爆発エフェクト
+	public Transform shield;
+	public GameObject Explosion;
+	public GameObject zangai;
 	bool destroy;
+	bool flag;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +23,11 @@ public class ShieldRotate : MonoBehaviour {
 		if (Earth.dead)
 			destroy = true;
 
-		if (destroy) {
-			Vector3 EndOfTheWorld = new Vector3 (114514, 0, 0);
-			transform.position = EndOfTheWorld;
+		if (destroy && !flag) {
+			Instantiate (zangai, shield.position, transform.rotation);
+			Instantiate (Explosion, shield.position, transform.rotation);
+			transform.position = new Vector3 (114514, 0, 0);
+			flag = true;
 		}
 	}
 

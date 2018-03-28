@@ -7,6 +7,7 @@ public class MeteoManager : MonoBehaviour {
 	public GameObject meteo;
 	public int meteoMAX;
 	public float FirstDelayTime;
+	public float interval;
 	private GameObject[] unsa;
 	private bool[] flag;
 	private float[] x;
@@ -34,7 +35,7 @@ public class MeteoManager : MonoBehaviour {
 	void Update () {
 		count += Time.deltaTime;
 		for (int i = 0; i < meteoMAX; i++) {
-			if (count > i+FirstDelayTime && !flag [i]) {
+			if (count > i*interval + FirstDelayTime && !flag [i]) {
 				Instantiate (unsa [i], new Vector3 (x [i], y [i], 0), Quaternion.identity);
 				flag [i] = true;
 			}

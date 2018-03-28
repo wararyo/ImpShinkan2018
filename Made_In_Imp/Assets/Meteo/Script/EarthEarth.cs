@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EarthEarth : MonoBehaviour {
 
+	public int Player;
 	bool dead;
+	public GameObject armagedon;
 
 	// Use this for initialization
 	void Start () {
@@ -17,14 +19,20 @@ public class EarthEarth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D meteo) {
-		if (meteo.gameObject.tag == "Finish") {
+		if (!dead && meteo.gameObject.tag == "Finish") {
 			//Debug.Log ("unsa");
-			GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
+			Instantiate(armagedon,transform.position,Quaternion.identity);
+			transform.position = new Vector3(114514,0,0);
 			dead = true;
+			Commander.Failed (Player - 1);
 		}
 	}
 
 	public void move (float x, float y){
 		if(!dead) transform.position += new Vector3 (x*0.2f, y*0.2f, 0);
+	}
+
+	void onMinigameEnd(){
+		Commander.Succeed(Player-1);
 	}
 }
