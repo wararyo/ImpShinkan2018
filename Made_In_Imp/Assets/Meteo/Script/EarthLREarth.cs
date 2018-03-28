@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthEarth : MonoBehaviour {
+public class EarthLREarth : MonoBehaviour {
 
-	bool dead;
+	public bool dead;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +17,7 @@ public class EarthEarth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D meteo) {
-		if (meteo.gameObject.tag == "Finish") {
+		if (!dead && meteo.gameObject.tag == "Finish") {
 			//Debug.Log ("unsa");
 			GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
 			dead = true;
