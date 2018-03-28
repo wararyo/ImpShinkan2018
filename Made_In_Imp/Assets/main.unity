@@ -995,8 +995,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigames:
-  - {fileID: 11400000, guid: ac15641dc9209e34f8ab990433663f01, type: 2}
   - {fileID: 11400000, guid: 5845286317d1f564d921e89816cef515, type: 2}
+  - {fileID: 11400000, guid: ac15641dc9209e34f8ab990433663f01, type: 2}
+  - {fileID: 11400000, guid: d21593bc1ad4b7c4e81f537d810d1b0b, type: 2}
+  - {fileID: 11400000, guid: 525b47fb9f31f4fbfa3de2e1f1fbb3ec, type: 2}
+  - {fileID: 11400000, guid: 21384e43da676404d885b05bb33bed8d, type: 2}
+  - {fileID: 11400000, guid: 0896c5b5775734d8fa2fdf44597a72ad, type: 2}
+  - {fileID: 11400000, guid: 480fb5916ca4e46438c3163accb36695, type: 2}
   textbox: {fileID: 1879357760}
   timeCounter: {fileID: 2111294222}
   score1P: {fileID: 959827065}
