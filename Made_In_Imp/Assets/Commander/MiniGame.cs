@@ -6,6 +6,6 @@ using UnityEngine;
 public class MiniGame : ScriptableObject {
 
     new public string name;
-    public Sprite orderSprite;
+    public Texture orderImage;
     public string sceneName;
 }

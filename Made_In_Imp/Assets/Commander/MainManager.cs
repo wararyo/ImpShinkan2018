@@ -10,6 +10,7 @@ public class MainManager : MonoBehaviour {
     public Text textbox;
     public TimeCounterUI timeCounter;
     public Text score1P, score2P, gameCount;
+	public Animator canvasAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class MainManager : MonoBehaviour {
 
 	IEnumerator coroutineWork(){
         int i = 0;
+		yield return new WaitForSecondsRealtime(1);
         foreach (MiniGame mg in minigames)
         {
             //UIの更新
@@ -34,14 +36,17 @@ public class MainManager : MonoBehaviour {
             //読み込み始めるけど表示はしない
             AsyncOperation async = SceneManager.LoadSceneAsync(mg.sceneName,LoadSceneMode.Additive);
             async.allowSceneActivation = false;
-            yield return new WaitForSecondsRealtime(4);
+            yield return new WaitForSecondsRealtime(2.5f);
             //yield return async;これつけたら永遠に読み込み終わらないのなんでや
             //4秒経ったらミニゲーム開始
 			Commander.InitializeMinigame();
-            timeCounter.StartCounting(8);
             async.allowSceneActivation = true;
+			yield return new WaitForSecondsRealtime(0.5f);
+			timeCounter.StartCounting(8);
             yield return new WaitForSecondsRealtime(8);
 			Commander.onMinigameEnd ();//イベント発行
+			canvasAnim.SetTrigger("Transition");
+			yield return new WaitForSecondsRealtime(1);
             SceneManager.UnloadSceneAsync(mg.sceneName);
             //ミニゲーム終了後
             i++;
