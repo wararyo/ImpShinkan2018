@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ground : MonoBehaviour {
 
     public GameObject ground;
-    public float rotateSpeed = 0.1f;
+    public float rotateSpeed = 1f;
     private Vector3 rotateAngle;
 
     // Use this for initialization
