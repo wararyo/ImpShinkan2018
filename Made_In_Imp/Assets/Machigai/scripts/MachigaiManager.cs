@@ -13,6 +13,7 @@ public class MachigaiManager : MonoBehaviour {
     public GameObject target_obj, choice_obj;
     int nowChoice = 2;
     bool isSelected = false;
+    public AudioClip ok_m, ng_m;
 
     // Use this for initialization
     void Start () {
@@ -74,12 +75,16 @@ public class MachigaiManager : MonoBehaviour {
     }
 
     void OnClear() {
+        GetComponent<AudioSource>().clip = ok_m;
+        GetComponent<AudioSource>().Play();
         Commander.Succeed(playerNum);
         choices[nowChoice].StartCoroutine(choices[nowChoice].OnClear());
         target.StartCoroutine(target.OnClear());
     }
 
     void OnFailed() {
+        GetComponent<AudioSource>().clip = ng_m;
+        GetComponent<AudioSource>().Play();
         Commander.Failed(playerNum);
         target.StartCoroutine(target.OnFailed());
     }
