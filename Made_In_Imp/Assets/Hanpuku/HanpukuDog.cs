@@ -11,6 +11,8 @@ public class HanpukuDog : MonoBehaviour {
     int c = 0;
 
     public Sprite left_g, right_g, mofu_g;
+    public AudioClip bunbun_se, clear_se;
+    AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,7 @@ public class HanpukuDog : MonoBehaviour {
             StopAllCoroutines();
         };
         StartCoroutine(Vibration());
+        audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -37,6 +40,8 @@ public class HanpukuDog : MonoBehaviour {
         isJumping = true;
         dir *= -1;
         c++;
+        audio.clip = bunbun_se;
+        audio.Play();
         GetComponent<SpriteRenderer>().sprite = dir > 0 ? right_g : left_g;
         int frame = 10;
         for(int i = 0; i <= frame; i++) {
@@ -49,6 +54,8 @@ public class HanpukuDog : MonoBehaviour {
 
     IEnumerator Clear() {
         isClear = true;
+        audio.clip = clear_se;
+        audio.Play();
         GetComponent<SpriteRenderer>().sprite = mofu_g;
         float time = 0f;
         var base_pos = transform.position + Vector3.down;
