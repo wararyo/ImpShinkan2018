@@ -17,6 +17,8 @@ public class HamburgerGu : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D(Collision2D col) {
+        //ハンバーガーに乗ったらピタッと止まる
+        //既に止まってたり、横からぶつかった場合は無視
         if (isCatched) return;
         if (transform.position.y < col.transform.position.y) return;
         transform.parent = col.transform;
