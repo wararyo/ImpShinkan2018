@@ -16,6 +16,9 @@ public static class Commander {
 
 	public static Action onMinigameEnd = () => {};
 
+	/// <summary>
+	/// 全体の初期化 スコアが0になります
+	/// </summary>
     public static void Initialize()
     {
         ResetResultState();
@@ -25,7 +28,15 @@ public static class Commander {
         }
     }
 
-    public static void ResetResultState()
+	/// <summary>
+	/// 各ミニゲームの初期化
+	/// </summary>
+	public static void InitializeMinigame(){
+		ResetResultState ();
+		onMinigameEnd = () => {};
+	}
+
+    static void ResetResultState()
     {
         for (int i = 0;i < result.Length;i++)
         {

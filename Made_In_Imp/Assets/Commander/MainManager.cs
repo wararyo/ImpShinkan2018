@@ -37,7 +37,7 @@ public class MainManager : MonoBehaviour {
             yield return new WaitForSecondsRealtime(4);
             //yield return async;これつけたら永遠に読み込み終わらないのなんでや
             //4秒経ったらミニゲーム開始
-            Commander.ResetResultState();
+			Commander.InitializeMinigame();
             timeCounter.StartCounting(8);
             async.allowSceneActivation = true;
             yield return new WaitForSecondsRealtime(8);
