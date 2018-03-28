@@ -38,7 +38,7 @@ public class HamburgerManager : MonoBehaviour {
         var sr = obj.GetComponent<SpriteRenderer>();
         sr.sprite = gu_sprites[index];
         var col = obj.GetComponent<BoxCollider2D>();
-        col.size = new Vector2(sr.bounds.size.x * 0.5f, sr.bounds.size.y * 0.5f);
+        col.size = new Vector2(sr.bounds.size.x * 0.7f, sr.bounds.size.y * 0.7f);
         col.offset += Vector2.up * sr.bounds.size.y * 0.2f;
         gu_set.Add(col.GetComponent<HamburgerGu>());
     }
