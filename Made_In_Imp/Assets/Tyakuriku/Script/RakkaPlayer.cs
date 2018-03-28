@@ -8,9 +8,12 @@ public class RakkaPlayer : MonoBehaviour {
 
     public GameObject player;
     public float rakkaSpeed = 1;
+	private float moveSpeed = 0.1f;
 	public GameObject ground;
 	public UnityEvent land;
 	public UnityEvent failed;
+
+	private Vector3 position;
 
 	// Use this for initialization
 	void Start () {
@@ -28,18 +31,21 @@ public class RakkaPlayer : MonoBehaviour {
         player.transform.position += Vector3.down * rakkaSpeed * Time.deltaTime;
     }
 
-    public void MovePlayer()
+	public void MovePlayer(float x)
     {
-  
+		player.transform.position += new Vector3 (x*moveSpeed, 0, 0);
+		position = player.transform.position;
+		position.x = Mathf.Clamp (position.x, -2.8f, 2.8f);
+		player.transform.position = position;
     }
 
 
-	private void OnTriggerEnter2D(Collider2D col){
+	private void OnCollisionEnter2D(Collision2D col){
 		Debug.Log ("hi");
 		if (col.gameObject == ground) {
 			//成功
 			land.Invoke ();
-		} else {
+		}else{
 			//失敗
 			failed.Invoke();
 		}
