@@ -43,6 +43,7 @@ public class MainManager : MonoBehaviour {
             async.allowSceneActivation = true;
 			yield return new WaitForSecondsRealtime(0.5f);
 			timeCounter.StartCounting(8);
+			Commander.onMinigameStart ();//イベント発行
             yield return new WaitForSecondsRealtime(8);
 			Commander.onMinigameEnd ();//イベント発行
 			canvasAnim.SetTrigger("Transition");

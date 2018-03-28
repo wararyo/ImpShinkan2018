@@ -15,6 +15,7 @@ public static class Commander {
     static public int[] score;
 
 	public static Action onMinigameEnd = () => {};
+	public static Action onMinigameStart = () => {};
 
 	/// <summary>
 	/// 全体の初期化 スコアが0になります
@@ -34,6 +35,7 @@ public static class Commander {
 	public static void InitializeMinigame(){
 		ResetResultState ();
 		onMinigameEnd = () => {};
+		onMinigameStart = () => {};
 	}
 
     static void ResetResultState()
