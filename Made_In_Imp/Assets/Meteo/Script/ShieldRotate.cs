@@ -5,6 +5,9 @@ using UnityEngine;
 public class ShieldRotate : MonoBehaviour {
 
 	public float speed;
+	public EarthLREarth Earth;
+	//public 爆発エフェクト
+	bool destroy;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +16,14 @@ public class ShieldRotate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (Earth.dead)
+			destroy = true;
+
+		if (destroy) {
+			Vector3 EndOfTheWorld = new Vector3 (114514, 0, 0);
+			transform.position = EndOfTheWorld;
+		}
 	}
 
 	public void Role(bool L,bool R){

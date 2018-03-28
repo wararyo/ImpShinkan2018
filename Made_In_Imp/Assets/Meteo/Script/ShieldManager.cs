@@ -24,5 +24,7 @@ public class ShieldManager : MonoBehaviour {
 		R2 = Input.GetButton ("2R");
 		Shield1.Role (L1, R1);
 		Shield2.Role (L2, R2);
+
+
 	}
 }

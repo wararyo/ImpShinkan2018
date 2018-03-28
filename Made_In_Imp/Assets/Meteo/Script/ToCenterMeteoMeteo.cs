@@ -11,7 +11,6 @@ public class ToCenterMeteoMeteo : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		start = transform.position;
-		float a, b;
 		angle = -1*start;
 		angle.Normalize ();
 	}
@@ -25,8 +24,7 @@ public class ToCenterMeteoMeteo : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D s){
-		Debug.Log ("unsa");
-		if (s.gameObject.tag == "Player" && gameObject.layer == s.gameObject.layer)
+		if (s.gameObject.tag == "Player")
 			angle *= -1;
 	}
 
