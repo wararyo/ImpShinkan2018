@@ -21,6 +21,7 @@ public class HamburgerGu : MonoBehaviour {
         //既に止まってたり、横からぶつかった場合は無視
         if (isCatched) return;
         if (transform.position.y < col.transform.position.y) return;
+        GetComponent<AudioSource>().Play();
         transform.parent = col.transform;
         var rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
