@@ -51,13 +51,17 @@ public static class Commander {
 	}
 
 	public static void Succeed(int player) {
-		if (result [player] == resultState.Undefined)
+		if (result [player] == resultState.Undefined) {
 			result [player] = resultState.Succeed;
+			Debug.Log ((player + 1) + "Pが成功しました");
+		}
 	}
 
 	public static void Failed(int player) {
-		if (result [player] == resultState.Undefined)
+		if (result [player] == resultState.Undefined) {
 			result [player] = resultState.Failed;
+			Debug.Log ((player + 1) + "Pが失敗しました");
+		}
 	}
 
     public static void AddScore()
