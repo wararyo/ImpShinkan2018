@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073f7d8a18d1ec64e87980f1b95af5d1, type: 3}
   m_Name: Hanpuku
   m_EditorClassIdentifier: 
-  name: "\u72AC\u306E\u53CD\u5FA9\u6A2A\u8DF3\u3073"
+  name: "\u5B50\u72AC\u306E\u53CD\u5FA9\u6A2A\u8DF3\u3073"
   orderSprite: {fileID: 0}
   sceneName: Hanpuku

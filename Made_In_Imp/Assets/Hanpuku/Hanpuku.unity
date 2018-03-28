@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 350416242}
   - component: {fileID: 350416244}
   - component: {fileID: 350416243}
+  - component: {fileID: 350416245}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Untagged
@@ -264,11 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0262c5a06f3b36c4eab238c66c09a88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNum: 0
-  clearCount: 20
-  left_g: {fileID: 21300000, guid: 3f14df61ec3d0d94ba1529af91e571cd, type: 3}
-  right_g: {fileID: 21300000, guid: 8186271e45063f94584a615c1cc5356e, type: 3}
-  mofu_g: {fileID: 21300000, guid: 21bd14ec45b420d47a54686e96abb50f, type: 3}
 --- !u!212 &350416244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -304,6 +300,24 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &350416245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350416241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baec203747d361a43804c3848d4e5fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNum: 0
+  clearCount: 20
+  left_g: {fileID: 21300000, guid: 3f14df61ec3d0d94ba1529af91e571cd, type: 3}
+  right_g: {fileID: 21300000, guid: 8186271e45063f94584a615c1cc5356e, type: 3}
+  mofu_g: {fileID: 21300000, guid: 21bd14ec45b420d47a54686e96abb50f, type: 3}
+  bunbun_se: {fileID: 8300000, guid: ec884ca4f24952345ac70c41e26cf778, type: 3}
+  clear_se: {fileID: 8300000, guid: f3105c4a9c7c2c34a9b0bd3eb73588d3, type: 3}
 --- !u!1 &502000245
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +793,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2119628718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0262c5a06f3b36c4eab238c66c09a88e, type: 3}
+  m_Script: {fileID: 11500000, guid: baec203747d361a43804c3848d4e5fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
@@ -787,6 +801,8 @@ MonoBehaviour:
   left_g: {fileID: 21300000, guid: 3f14df61ec3d0d94ba1529af91e571cd, type: 3}
   right_g: {fileID: 21300000, guid: 8186271e45063f94584a615c1cc5356e, type: 3}
   mofu_g: {fileID: 21300000, guid: 21bd14ec45b420d47a54686e96abb50f, type: 3}
+  bunbun_se: {fileID: 8300000, guid: ec884ca4f24952345ac70c41e26cf778, type: 3}
+  clear_se: {fileID: 8300000, guid: f3105c4a9c7c2c34a9b0bd3eb73588d3, type: 3}
 --- !u!212 &2119628721
 SpriteRenderer:
   m_ObjectHideFlags: 0
