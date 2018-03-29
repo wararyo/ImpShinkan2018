@@ -10,13 +10,15 @@ public class Background : MonoBehaviour {
 	public float speedUpRatio = 2.0f;
 	public float speedDownRatio = 2.0f;
 
+   
 	// Use this for initialization
 	void Start () {
-		
-	}
+       
+    }
 	
 	// Update is called once per frame
 	void Update () {
+       
 	}
 
 	public void SpeedUp(){

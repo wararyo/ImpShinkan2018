@@ -15,9 +15,13 @@ public class Yojo : MonoBehaviour {
     public Sprite right,left,forward;
     new SpriteRenderer renderer;
 
+    AudioSource hit;
+   
+
     // Use this for initialization
     void Start () {
         renderer = GetComponent<SpriteRenderer>();
+        hit = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -52,6 +56,7 @@ public class Yojo : MonoBehaviour {
 		} else {
 			Debug.Log ("Failed");
 			hitObject.Invoke ();
+            hit.Play();
 		}
 	}
 }
