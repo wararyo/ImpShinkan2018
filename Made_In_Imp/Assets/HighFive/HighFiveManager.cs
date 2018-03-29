@@ -8,6 +8,8 @@ public class HighFiveManager : MonoBehaviour {
     public HighFiveHand hand2P;
 	public HighFiveSun sun1P;
 	public HighFiveSun sun2P;
+    public SpriteRenderer women1P, women2P;
+    public Sprite womenFailed;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,7 @@ public class HighFiveManager : MonoBehaviour {
                 else
                 {
                     Commander.Failed(0);
+                    women1P.sprite = womenFailed;
                     Debug.Log("1Pハイタッチ失敗や");
                 }
             }
@@ -48,6 +51,7 @@ public class HighFiveManager : MonoBehaviour {
                 else
                 {
                     Commander.Failed(1);
+                    women2P.sprite = womenFailed;
                     Debug.Log("2Pハイタッチ失敗や");
                 }
             }

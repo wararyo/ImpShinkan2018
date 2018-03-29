@@ -552,7 +552,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b10bd205f0c4d469cbcdc02f5e9401b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -645,7 +645,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b10bd205f0c4d469cbcdc02f5e9401b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -700,6 +700,9 @@ MonoBehaviour:
   hand2P: {fileID: 1321824895}
   sun1P: {fileID: 1691241672}
   sun2P: {fileID: 2034748021}
+  women1P: {fileID: 371128332}
+  women2P: {fileID: 176384666}
+  womenFailed: {fileID: 21300000, guid: d12474ed2f5f3354c91422b2b7891a79, type: 3}
 --- !u!4 &1349928893
 Transform:
   m_ObjectHideFlags: 0
