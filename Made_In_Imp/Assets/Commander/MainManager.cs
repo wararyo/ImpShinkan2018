@@ -9,7 +9,8 @@ public class MainManager : MonoBehaviour {
     public List<MiniGame> minigames;
     public Text textbox;
     public TimeCounterUI timeCounter;
-    public Text score1P, score2P, gameCount;
+    public ScoreUI score1P, score2P;
+    public Text gameCount;
 	public Animator canvasAnim;
     public Image orderImage;
     public Sprite backSucceed1, backFailed1, backSucceed2, backFailed2;
@@ -26,14 +27,14 @@ public class MainManager : MonoBehaviour {
 	}
 
 	IEnumerator coroutineWork(){
-        int i = 0;
+        int i = 1;
 		yield return new WaitForSecondsRealtime(1);
         foreach (MiniGame mg in minigames)
         {
             //点数の更新
             textbox.text = mg.name;
-            score1P.text = Commander.score[0].ToString();
-            score2P.text = Commander.score[1].ToString();
+            score1P.setScore(Commander.score[0]);
+            score2P.setScore(Commander.score[1]);
             yield return new WaitForSecondsRealtime(1f);
 
             gameCount.text = i.ToString();
