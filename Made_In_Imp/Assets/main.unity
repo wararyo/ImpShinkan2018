@@ -1243,6 +1243,7 @@ MonoBehaviour:
   score2P: {fileID: 392540116}
   gameCount: {fileID: 1554269793}
   canvasAnim: {fileID: 1770512826}
+  orderImage: {fileID: 1363584314}
 --- !u!1 &2111294220
 GameObject:
   m_ObjectHideFlags: 0

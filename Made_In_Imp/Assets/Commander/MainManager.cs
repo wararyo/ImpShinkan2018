@@ -11,6 +11,7 @@ public class MainManager : MonoBehaviour {
     public TimeCounterUI timeCounter;
     public Text score1P, score2P, gameCount;
 	public Animator canvasAnim;
+    public Image orderImage;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class MainManager : MonoBehaviour {
             score1P.text = Commander.score[0].ToString();
             score2P.text = Commander.score[1].ToString();
             gameCount.text = i.ToString();
+            orderImage.sprite = mg.orderImage;
 
             //読み込み始めるけど表示はしない
             AsyncOperation async = SceneManager.LoadSceneAsync(mg.sceneName,LoadSceneMode.Additive);

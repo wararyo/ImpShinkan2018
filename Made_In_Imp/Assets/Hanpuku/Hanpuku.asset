@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Hanpuku
   m_EditorClassIdentifier: 
   name: "\u5B50\u72AC\u306E\u53CD\u5FA9\u6A2A\u8DF3\u3073"
-  orderSprite: {fileID: 0}
+  orderImage: {fileID: 21300000, guid: ec231b990ada2458c882b20f8cf01bd9, type: 3}
   sceneName: Hanpuku
