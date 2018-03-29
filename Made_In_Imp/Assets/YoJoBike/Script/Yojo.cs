@@ -12,10 +12,13 @@ public class Yojo : MonoBehaviour {
 	public float moveSpeed = 0.5f;
 	private Vector3 position;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Sprite right,left,forward;
+    new SpriteRenderer renderer;
+
+    // Use this for initialization
+    void Start () {
+        renderer = GetComponent<SpriteRenderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +26,19 @@ public class Yojo : MonoBehaviour {
 	}
 
 	public void MoveYojo(float x){
+
+        if (x < 0)
+        {
+            renderer.sprite = right;
+        }
+        else if (x > 0)
+        {
+            renderer.sprite = left;
+        }
+        else
+        {
+            renderer.sprite = forward;
+        }
 		gameObject.transform.position += new Vector3 (x*moveSpeed, 0, 0);
 		position = gameObject.transform.position;
 		position.x = Mathf.Clamp (position.x, -2.8f, 2.8f);

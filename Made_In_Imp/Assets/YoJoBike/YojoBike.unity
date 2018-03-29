@@ -2745,6 +2745,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   moveSpeed: 0.5
+  right: {fileID: 21300000, guid: b4b20c6470eef44449c184113c02044e, type: 3}
+  left: {fileID: 21300000, guid: 7963f9ee402801f4797ecd71f0eee99f, type: 3}
+  forward: {fileID: 21300000, guid: 90e9f46aa5856458993bdadc4e209093, type: 3}
 --- !u!60 &1075015367
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4596,6 +4599,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   moveSpeed: 0.5
+  right: {fileID: 21300000, guid: b4b20c6470eef44449c184113c02044e, type: 3}
+  left: {fileID: 21300000, guid: 7963f9ee402801f4797ecd71f0eee99f, type: 3}
+  forward: {fileID: 21300000, guid: 90e9f46aa5856458993bdadc4e209093, type: 3}
 --- !u!60 &1628246058
 PolygonCollider2D:
   m_ObjectHideFlags: 0
