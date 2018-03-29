@@ -15,10 +15,12 @@ public class RakkaPlayer : MonoBehaviour {
 
 	private Vector3 position;
 
-	// Use this for initialization
-	void Start () {
-       
-	}
+    AudioSource se;
+
+    // Use this for initialization
+    void Start () {
+        se = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -48,5 +50,6 @@ public class RakkaPlayer : MonoBehaviour {
 			//失敗
 			failed.Invoke();
 		}
+        se.Play();
 	}
 }
