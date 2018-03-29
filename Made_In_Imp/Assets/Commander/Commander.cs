@@ -5,13 +5,13 @@ using System;
 
 public static class Commander {
 
-	enum resultState {
+	public enum resultState {
 		Undefined,
 		Succeed,
 		Failed
 	}
 
-	static resultState[] result;
+	static public resultState[] result;
     static public int[] score;
 
 	public static Action onMinigameEnd = () => {};
