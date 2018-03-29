@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6540cb2132a9664cb73b59ae8ba6f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 3.96, z: 0}
+  startPoint: {x: 0, y: 4.6, z: 0}
   endPoint: {x: 0, y: -4.3, z: 0}
   target: 0.28
   speed: 3
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6540cb2132a9664cb73b59ae8ba6f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 3.96, z: 0}
+  startPoint: {x: 0, y: 4.6, z: 0}
   endPoint: {x: 0, y: -4.3, z: 0}
   target: 0.28
   speed: 3
