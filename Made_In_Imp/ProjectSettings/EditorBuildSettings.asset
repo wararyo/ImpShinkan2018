@@ -14,3 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cabbage/Cabbage.unity
     guid: 14e0c95c84f3040ca965c389bbd33f1a
+  - enabled: 1
+    path: Assets/Hamburger/Hamburger.unity
+    guid: 1ac00cc89f87a324db2dac49ccd3369a
+  - enabled: 1
+    path: Assets/Hanpuku/Hanpuku.unity
+    guid: a401ee531e33a784592a577970b9cbdf
+  - enabled: 1
+    path: Assets/HighFive/HighFiveScene.unity
+    guid: 43a30cdbcaa9ebc40a4887f181e3dbe8
+  - enabled: 1
+    path: Assets/Maze/Maze.unity
+    guid: 68934fec165d44aa9bba27ee4532fa2a
+  - enabled: 1
+    path: Assets/Tyakuriku/Tyakuriku.unity
+    guid: f252f721ef0f50845827f3cd0ea0fb02
