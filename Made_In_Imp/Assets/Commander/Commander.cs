@@ -5,16 +5,17 @@ using System;
 
 public static class Commander {
 
-	enum resultState {
+	public enum resultState {
 		Undefined,
 		Succeed,
 		Failed
 	}
 
-	static resultState[] result;
+	static public resultState[] result;
     static public int[] score;
 
 	public static Action onMinigameEnd = () => {};
+	public static Action onMinigameStart = () => {};
 
 	/// <summary>
 	/// 全体の初期化 スコアが0になります
@@ -34,6 +35,7 @@ public static class Commander {
 	public static void InitializeMinigame(){
 		ResetResultState ();
 		onMinigameEnd = () => {};
+		onMinigameStart = () => {};
 	}
 
     static void ResetResultState()
