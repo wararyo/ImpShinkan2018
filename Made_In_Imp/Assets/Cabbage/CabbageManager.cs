@@ -19,19 +19,19 @@ public class CabbageManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0)){//Input.GetButtonDown ("1A")) {
+		if (Input.GetButtonDown ("1A")) {
 			cabbage1P.Cut();
             cabbageGirl1P.Down();
         }
-        else if (Input.GetMouseButtonUp(0))
+		else if (Input.GetButtonUp ("1A"))
         {
             cabbageGirl1P.Up();
         }
-		if (Input.GetMouseButtonDown (1)) {
+		if (Input.GetButtonDown ("2A")) {
 			cabbage2P.Cut ();
             cabbageGirl2P.Down();
         }
-        else if (Input.GetMouseButtonUp(1))
+		else if (Input.GetButtonUp ("2A"))
         {
             cabbageGirl2P.Up();
         }

@@ -18,7 +18,7 @@ public class HighFiveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+		if (Input.GetButtonDown ("1A"))
         {
             if (hand1P.enabled)
             {
@@ -37,7 +37,7 @@ public class HighFiveManager : MonoBehaviour {
                 }
             }
         }
-        if (Input.GetMouseButtonDown(1))
+		if (Input.GetButtonDown ("2A"))
         {
             if (hand2P.enabled)
             {
