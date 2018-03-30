@@ -11,6 +11,10 @@ public class Yojo : MonoBehaviour {
 
 	public float moveSpeed = 0.5f;
 	private Vector3 position;
+	private Vector3[] lanePosition = new Vector3[3];
+	private float playerStartPositionY;
+	private int laneNum = 1;
+
 
     public Sprite right,left,forward;
     new SpriteRenderer renderer;
@@ -20,8 +24,15 @@ public class Yojo : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+		playerStartPositionY = gameObject.transform.position.y;
+
         renderer = GetComponent<SpriteRenderer>();
         hit = GetComponent<AudioSource>();
+		lanePosition [0] = new Vector3(-2.8f,playerStartPositionY,0);
+		lanePosition [1] = new Vector3(0,playerStartPositionY,0);
+		lanePosition [2] = new Vector3(2.8f,playerStartPositionY,0);
+
     }
 	
 	// Update is called once per frame
@@ -30,23 +41,25 @@ public class Yojo : MonoBehaviour {
 	}
 
 	public void MoveYojo(float x){
-
         if (x < 0)
         {
             renderer.sprite = right;
+			laneNum--;
+			renderer.sprite = forward;
+
         }
         else if (x > 0)
         {
             renderer.sprite = left;
+			laneNum++;
+			renderer.sprite = forward;
         }
         else
         {
             renderer.sprite = forward;
         }
-		gameObject.transform.position += new Vector3 (x*moveSpeed, 0, 0);
-		position = gameObject.transform.position;
-		position.x = Mathf.Clamp (position.x, -2.8f, 2.8f);
-		gameObject.transform.position = position;
+		laneNum = Mathf.Clamp (laneNum, 0, 2);
+		gameObject.transform.position = lanePosition [laneNum];
 	}
 
 	private void OnTriggerEnter2D(Collider2D col){
