@@ -12,6 +12,8 @@ public class HighFiveHand : MonoBehaviour {
     float currentPosition = 0;
     bool isReversing = false;
 
+    public AudioClip succeedSound, failedSound;
+
     /// <summary>
     /// ハイタッチをします。成功したらtrueを返します。
     /// </summary>
@@ -21,10 +23,12 @@ public class HighFiveHand : MonoBehaviour {
         float error = Mathf.Abs(currentPosition - target);
         if(error <= errorRange)
         {
+            GetComponent<AudioSource>().PlayOneShot(succeedSound);
             return true;
         }
         else
         {
+            GetComponent<AudioSource>().PlayOneShot(failedSound);
             return false;
         }
     }
