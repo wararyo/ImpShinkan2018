@@ -24,10 +24,11 @@ public class YojoBikeManager : MonoBehaviour {
 		x1P = Input.GetAxisRaw ("1Horizontal");
 		x2P = Input.GetAxisRaw ("2Horizontal");
 
-
 		if (isRunning1 == true) {
 			back1.SpeedUp ();
-			yojo1.MoveYojo (x1P);
+			if(Input.GetButtonDown("1Horizontal")){
+				yojo1.MoveYojo (x1P);
+			}
 		} else if (succeed == true) {
 			back1.SpeedDown ();
 		} else {
@@ -38,7 +39,9 @@ public class YojoBikeManager : MonoBehaviour {
 
 		if (isRunning2 == true) {
 			back2.SpeedUp ();
-			yojo2.MoveYojo (x2P);
+			if (Input.GetButtonDown ("2Horizontal")) {
+				yojo2.MoveYojo (x2P);
+			}
 		} else if (succeed == true) {
 			back2.SpeedDown ();
 		} else {
