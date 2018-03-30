@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ResultManager : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class ResultManager : MonoBehaviour {
 	public ScoreUI score1P,score2P;
 
 	public AudioSource BGM;
+    public AudioSource drumRoll;
 
 	int phase = 0;
 
@@ -20,18 +22,24 @@ public class ResultManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			switch(phase){
-			case 0:
+            case 0:
+                drumRoll.Play();
+                break;
+			case 1:
 				score1P.setScore (Commander.score [0]);
 				score2P.setScore (Commander.score [1]);
 				g.alpha = 1;
 				GetComponent<AudioSource> ().Play ();
 				StartCoroutine (coroutineWork ());
 				break;
-			case 1:
-				new GameObject().AddComponent<SceneNavigator>();
-				SceneNavigator.Instance.Change("Title",1);
+			case 2:
+                SceneManager.LoadSceneAsync("Credit", LoadSceneMode.Additive);
 				break;
-			}
+            case 3:
+                new GameObject().AddComponent<SceneNavigator>();
+                SceneNavigator.Instance.Change("Title", 2);
+                break;
+            }
 			phase++;
 		}
 	}
