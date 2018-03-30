@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public static class Commander {
 
-	enum resultState {
+	public enum resultState {
 		Undefined,
 		Succeed,
 		Failed
 	}
 
-	static resultState[] result;
+	static public resultState[] result;
     static public int[] score;
 
+	public static Action onMinigameEnd = () => {};
+	public static Action onMinigameStart = () => {};
+
+	/// <summary>
+	/// 全体の初期化 スコアが0になります
+	/// </summary>
     public static void Initialize()
     {
         ResetResultState();
@@ -22,7 +29,16 @@ public static class Commander {
         }
     }
 
-    public static void ResetResultState()
+	/// <summary>
+	/// 各ミニゲームの初期化
+	/// </summary>
+	public static void InitializeMinigame(){
+		ResetResultState ();
+		onMinigameEnd = () => {};
+		onMinigameStart = () => {};
+	}
+
+    static void ResetResultState()
     {
         for (int i = 0;i < result.Length;i++)
         {
@@ -37,11 +53,17 @@ public static class Commander {
 	}
 
 	public static void Succeed(int player) {
-		result [player] = resultState.Succeed;
+		if (result [player] == resultState.Undefined) {
+			result [player] = resultState.Succeed;
+			Debug.Log ((player + 1) + "Pが成功しました");
+		}
 	}
 
 	public static void Failed(int player) {
-		result [player] = resultState.Failed;
+		if (result [player] == resultState.Undefined) {
+			result [player] = resultState.Failed;
+			Debug.Log ((player + 1) + "Pが失敗しました");
+		}
 	}
 
     public static void AddScore()

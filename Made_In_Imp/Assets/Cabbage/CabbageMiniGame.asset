@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: CabbageMiniGame
   m_EditorClassIdentifier: 
   name: "\u30AD\u30E3\u30D9\u30C4\u3092\u5207\u308A\u523B\u3080\u30E4\u30C4"
-  orderSprite: {fileID: 0}
+  orderImage: {fileID: 21300000, guid: 9e469d18b34e646b1978249e468cf5c8, type: 3}
   sceneName: Cabbage

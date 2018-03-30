@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,10 +17,12 @@ public class CabbageCabbage : MonoBehaviour {
 
 	bool isCutAll = false;
     new SpriteRenderer renderer;
+    AudioSource se;
 
 	// Use this for initialization
 	void Start () {
-        renderer = GetComponent<SpriteRenderer>();
+		renderer = GetComponent<SpriteRenderer> ();
+        se = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +36,8 @@ public class CabbageCabbage : MonoBehaviour {
             //ParticleEffect
             burst.Emit(24);
             sengiri.Emit(32);
+
+            se.Play();
 
             cutCount++;
             int spriteIndex = (int)Mathf.Lerp(0, cabbageSprites.Count - 1, (float)cutCount / cutCountGoal);
