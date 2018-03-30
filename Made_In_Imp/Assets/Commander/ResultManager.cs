@@ -10,6 +10,8 @@ public class ResultManager : MonoBehaviour {
 
 	public AudioSource BGM;
 
+	int phase = 0;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -17,11 +19,20 @@ public class ResultManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
-			score1P.setScore (Commander.score [0]);
-			score2P.setScore (Commander.score [1]);
-			g.alpha = 1;
-			GetComponent<AudioSource> ().Play ();
-			StartCoroutine (coroutineWork());
+			switch(phase){
+			case 0:
+				score1P.setScore (Commander.score [0]);
+				score2P.setScore (Commander.score [1]);
+				g.alpha = 1;
+				GetComponent<AudioSource> ().Play ();
+				StartCoroutine (coroutineWork ());
+				break;
+			case 1:
+				new GameObject().AddComponent<SceneNavigator>();
+				SceneNavigator.Instance.Change("Title",1);
+				break;
+			}
+			phase++;
 		}
 	}
 
