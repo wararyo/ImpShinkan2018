@@ -75,6 +75,7 @@ public class MainManager : MonoBehaviour {
             i++;
             Commander.AddScore();
         }
-        textbox.text = "終わり";
+		yield return new WaitForSecondsRealtime(4);
+		SceneNavigator.Instance.Change("Result",1);
 	}
 }
