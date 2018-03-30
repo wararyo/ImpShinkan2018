@@ -6,6 +6,7 @@ public class MazeManager : MonoBehaviour {
 
 	public MazePlayer player1;
 	public MazePlayer player2;
+    public SpriteRenderer thankyou1, thankyou2;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +21,11 @@ public class MazeManager : MonoBehaviour {
 
 	public void Succeed1P(){
 		Commander.Succeed (0);
+        thankyou1.enabled = true;
 	}
 
 	public void Succeed2P(){
 		Commander.Succeed (1);
-	}
+        thankyou2.enabled = true;
+    }
 }
