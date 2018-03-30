@@ -7,10 +7,15 @@ public class EarthEarth : MonoBehaviour {
 	public int Player;
 	bool dead;
 	public GameObject armagedon;
+	AudioSource SE;
 
 	// Use this for initialization
 	void Start () {
-		
+		SE = GetComponent<AudioSource> ();
+		if (gameObject.layer == 8)
+			SE.panStereo = -1;
+		else if(gameObject.layer == 9)
+			SE.panStereo = 1;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +27,7 @@ public class EarthEarth : MonoBehaviour {
 		if (!dead && meteo.gameObject.tag == "Finish") {
 			//Debug.Log ("unsa");
 			Instantiate(armagedon,transform.position,Quaternion.identity);
+			SE.PlayOneShot (SE.clip);
 			transform.position = new Vector3(114514,0,0);
 			dead = true;
 			Commander.Failed (Player - 1);

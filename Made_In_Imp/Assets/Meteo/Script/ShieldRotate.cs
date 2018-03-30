@@ -11,6 +11,7 @@ public class ShieldRotate : MonoBehaviour {
 	public GameObject zangai;
 	bool destroy;
 	bool flag;
+	float count=0;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,12 @@ public class ShieldRotate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		count += Time.deltaTime;
+		
 		if (Earth.dead)
+			destroy = true;
+
+		if (count > 7)
 			destroy = true;
 
 		if (destroy && !flag) {

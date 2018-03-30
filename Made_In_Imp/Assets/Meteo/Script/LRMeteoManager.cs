@@ -26,8 +26,8 @@ public class LRMeteoManager : MonoBehaviour {
 			L_unsa [i] = meteo;
 			R_unsa [i] = meteo;
 			do {
-				x [i] = Random.Range (-7, 7);
-				y [i] = Random.Range (-7, 7);
+				x [i] = Random.Range (-6.5f, 6.5f);
+				y [i] = Random.Range (-6.5f, 6.5f);
 			} while(x [i] > -6 && x [i] < 6 && y [i] > -6 && y [i] < 6);
 		}
 	}
@@ -36,7 +36,7 @@ public class LRMeteoManager : MonoBehaviour {
 	void Update () {
 		count += Time.deltaTime;
 		for (int i = 0; i < meteoMAX; i++) {
-			if (count > i*2+FirstDelayTime) {
+			if (count > i*1.5+FirstDelayTime) {
 				if (!flag[i]) {
 					Instantiate (L_unsa [i], new Vector3 (x [i], y [i], 0), Quaternion.identity);
 					L_unsa[i].layer = 8;
