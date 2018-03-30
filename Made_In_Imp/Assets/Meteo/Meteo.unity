@@ -154,8 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteo: {fileID: 1831668101291438, guid: 32d1adb9dd0d744a58440f528957cb12, type: 2}
-  meteoMAX: 6
-  FirstDelayTime: 0
+  meteoMAX: 4
+  FirstDelayTime: 1
+  interval: 1.2
 --- !u!1 &70291787
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +431,17 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114274907948922500, guid: 2eaacb12551334716b26c88c22b83321,
+        type: 2}
+      propertyPath: armagedon
+      value: 
+      objectReference: {fileID: 1047492724461540, guid: 1a8bc00b4635e4ffc86c7a68616e11c5,
+        type: 2}
+    - target: {fileID: 114274907948922500, guid: 2eaacb12551334716b26c88c22b83321,
+        type: 2}
+      propertyPath: Player
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2eaacb12551334716b26c88c22b83321, type: 2}
   m_IsPrefabParent: 0
@@ -584,6 +596,11 @@ Prefab:
         type: 2}
       propertyPath: m_UsedByEffector
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114274907948922500, guid: 2eaacb12551334716b26c88c22b83321,
+        type: 2}
+      propertyPath: Player
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2eaacb12551334716b26c88c22b83321, type: 2}
