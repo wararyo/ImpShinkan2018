@@ -16,7 +16,7 @@ public class Yojo : MonoBehaviour {
 	private int laneNum = 1;
 
 
-    public Sprite right,left,forward;
+    public Sprite[] character = new Sprite[3];
     new SpriteRenderer renderer;
 
     AudioSource hit;
@@ -29,9 +29,9 @@ public class Yojo : MonoBehaviour {
 
         renderer = GetComponent<SpriteRenderer>();
         hit = GetComponent<AudioSource>();
-		lanePosition [0] = new Vector3(-2.8f,playerStartPositionY,0);
+		lanePosition [0] = new Vector3(-3f,playerStartPositionY,0);
 		lanePosition [1] = new Vector3(0,playerStartPositionY,0);
-		lanePosition [2] = new Vector3(2.8f,playerStartPositionY,0);
+		lanePosition [2] = new Vector3(3f,playerStartPositionY,0);
 
     }
 	
@@ -43,23 +43,16 @@ public class Yojo : MonoBehaviour {
 	public void MoveYojo(float x){
         if (x < 0)
         {
-            renderer.sprite = right;
 			laneNum--;
-			renderer.sprite = forward;
 
         }
         else if (x > 0)
         {
-            renderer.sprite = left;
 			laneNum++;
-			renderer.sprite = forward;
-        }
-        else
-        {
-            renderer.sprite = forward;
         }
 		laneNum = Mathf.Clamp (laneNum, 0, 2);
 		gameObject.transform.position = lanePosition [laneNum];
+        renderer.sprite = character[laneNum];
 	}
 
 	private void OnTriggerEnter2D(Collider2D col){
