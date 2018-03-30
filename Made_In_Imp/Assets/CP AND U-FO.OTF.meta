@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 19a6e50b3f13c0340b44e394941acd8f
+timeCreated: 1522327166
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CP & U-Fo
+  fontNames:
+  - CP & U-Fo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

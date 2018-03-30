@@ -9,7 +9,13 @@ public class MainManager : MonoBehaviour {
     public List<MiniGame> minigames;
     public Text textbox;
     public TimeCounterUI timeCounter;
-    public Text score1P, score2P, gameCount;
+    public ScoreUI score1P, score2P;
+    public Text gameCount;
+	public Animator canvasAnim;
+    public Image orderImage;
+    public Sprite backSucceed1, backFailed1, backSucceed2, backFailed2;
+    public Image backLeft, backRight;
+	public Animator character1,character2;
 
 	// Use this for initialization
 	void Start () {
@@ -22,31 +28,65 @@ public class MainManager : MonoBehaviour {
 	}
 
 	IEnumerator coroutineWork(){
-        int i = 0;
+        int i = 1;
+		character1.SetBool ("Succeed", true);
+		character2.SetBool ("Succeed", true);
+		canvasAnim.Play ("Start");
+		yield return new WaitForSecondsRealtime(4);
+		character1.SetBool ("Succeed", false);
+		character2.SetBool ("Succeed", false);
         foreach (MiniGame mg in minigames)
         {
-            //UIの更新
-            textbox.text = mg.name;
-            score1P.text = Commander.score[0].ToString();
-            score2P.text = Commander.score[1].ToString();
-            gameCount.text = i.ToString();
+			//読み込み始めるけど表示はしない
+			AsyncOperation async = SceneManager.LoadSceneAsync(mg.sceneName,LoadSceneMode.Additive);
+			async.allowSceneActivation = false;
 
-            //読み込み始めるけど表示はしない
-            AsyncOperation async = SceneManager.LoadSceneAsync(mg.sceneName,LoadSceneMode.Additive);
-            async.allowSceneActivation = false;
-            yield return new WaitForSecondsRealtime(4);
+            gameCount.text = i.ToString();
+            orderImage.sprite = mg.orderImage;
+
+			character1.SetBool ("Succeed", false);
+			character2.SetBool ("Succeed", false);
+			character1.SetBool ("Failed", false);
+			character2.SetBool ("Failed", false);
+
+			yield return new WaitForSecondsRealtime(1.5f);
             //yield return async;これつけたら永遠に読み込み終わらないのなんでや
             //4秒経ったらミニゲーム開始
 			Commander.InitializeMinigame();
-            timeCounter.StartCounting(8);
             async.allowSceneActivation = true;
+			yield return new WaitForSecondsRealtime(0.5f);
+			timeCounter.StartCounting(8);
+			Commander.onMinigameStart ();//イベント発行
             yield return new WaitForSecondsRealtime(8);
 			Commander.onMinigameEnd ();//イベント発行
+            //背景とキャラクターの更新
+            backLeft.sprite = Commander.result[0] == Commander.resultState.Succeed ? backSucceed1 : backFailed1;
+            backRight.sprite = Commander.result[1] == Commander.resultState.Succeed ? backSucceed2 : backFailed2;
+			if(Commander.result[0] == Commander.resultState.Succeed) character1.SetBool ("Succeed", true);
+			else character1.SetBool ("Failed", true);
+			if(Commander.result[1] == Commander.resultState.Succeed) character2.SetBool ("Succeed", true);
+			else character2.SetBool ("Failed", true);
+			if (i == minigames.Count)
+				canvasAnim.Play ("End");
+			else canvasAnim.SetTrigger("Transition");
+			yield return new WaitForSecondsRealtime(1);
             SceneManager.UnloadSceneAsync(mg.sceneName);
             //ミニゲーム終了後
             i++;
             Commander.AddScore();
+
+			//点数の更新
+			textbox.text = mg.name;
+			score1P.setScore(Commander.score[0]);
+			score2P.setScore(Commander.score[1]);
+			yield return new WaitForSecondsRealtime(1f);
         }
-        textbox.text = "終わり";
+		character1.SetBool ("Succeed", false);
+		character2.SetBool ("Succeed", false);
+		character1.SetBool ("Failed", false);
+		character2.SetBool ("Failed", false);
+		yield return new WaitForSecondsRealtime(4);
+		new GameObject().AddComponent<SceneNavigator>();
+		SceneNavigator.Instance.Change("Result",1);
 	}
 }

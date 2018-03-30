@@ -15,10 +15,18 @@ public class RakkaPlayer : MonoBehaviour {
 
 	private Vector3 position;
 
-	// Use this for initialization
-	void Start () {
-       
-	}
+	private bool coroutineRunning = false;
+
+    AudioSource se;
+
+	public Sprite succeeded;
+	new SpriteRenderer renderer;
+
+    // Use this for initialization
+    void Start () {
+        se = GetComponent<AudioSource>();
+		renderer = GetComponent<SpriteRenderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,14 +47,28 @@ public class RakkaPlayer : MonoBehaviour {
 		player.transform.position = position;
     }
 
+	IEnumerator SucceededMotionCoroutine(){
+		if (coroutineRunning)
+			yield break;
+		coroutineRunning = true;
+		for (int i = 0; i < 2; i++) {
+			player.transform.position += Vector3.up;
+			yield return new WaitForSeconds (0.2f);
+			player.transform.position += Vector3.down;
+			yield return new WaitForSeconds (0.3f);
+		}
+	}
 
 	private void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject == ground) {
 			//成功
 			land.Invoke ();
+			renderer.sprite = succeeded;
+			StartCoroutine (SucceededMotionCoroutine());
 		}else{
 			//失敗
 			failed.Invoke();
 		}
+        se.Play();
 	}
 }
