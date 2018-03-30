@@ -24,5 +24,6 @@ public class MazePlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D c){
 		onGoal.Invoke ();
+		GetComponent<AudioSource> ().Play ();
 	}
 }
