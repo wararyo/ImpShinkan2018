@@ -7,12 +7,14 @@ public class ToCenterMeteoMeteo : MonoBehaviour {
 	public Vector2 start;
 	public Vector2 angle;
 	public float speed;
+	AudioSource[] SE;
 
 	// Use this for initialization
 	void Start () {
 		start = transform.position;
 		angle = -1*start;
 		angle.Normalize ();
+		SE = GetComponents<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,8 +26,10 @@ public class ToCenterMeteoMeteo : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D s){
-		if (s.gameObject.tag == "Player")
+		if (s.gameObject.tag == "Player"){
 			angle *= -1;
+			SE [1].PlayOneShot (SE [1].clip);
+		}
 	}
 
 }
