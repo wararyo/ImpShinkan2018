@@ -15,6 +15,7 @@ public class MainManager : MonoBehaviour {
     public Image orderImage;
     public Sprite backSucceed1, backFailed1, backSucceed2, backFailed2;
     public Image backLeft, backRight;
+	public Animator character1,character2;
 
 	// Use this for initialization
 	void Start () {
@@ -40,10 +41,17 @@ public class MainManager : MonoBehaviour {
             gameCount.text = i.ToString();
             orderImage.sprite = mg.orderImage;
 
+			character1.SetBool ("Succeed", false);
+			character2.SetBool ("Succeed", false);
+			character1.SetBool ("Failed", false);
+			character2.SetBool ("Failed", false);
+
+			yield return new WaitForSecondsRealtime(1);
+
             //読み込み始めるけど表示はしない
             AsyncOperation async = SceneManager.LoadSceneAsync(mg.sceneName,LoadSceneMode.Additive);
             async.allowSceneActivation = false;
-            yield return new WaitForSecondsRealtime(1.5f);
+            yield return new WaitForSecondsRealtime(0.5f);
             //yield return async;これつけたら永遠に読み込み終わらないのなんでや
             //4秒経ったらミニゲーム開始
 			Commander.InitializeMinigame();
@@ -53,9 +61,13 @@ public class MainManager : MonoBehaviour {
 			Commander.onMinigameStart ();//イベント発行
             yield return new WaitForSecondsRealtime(8);
 			Commander.onMinigameEnd ();//イベント発行
-            //背景の更新
+            //背景とキャラクターの更新
             backLeft.sprite = Commander.result[0] == Commander.resultState.Succeed ? backSucceed1 : backFailed1;
             backRight.sprite = Commander.result[1] == Commander.resultState.Succeed ? backSucceed2 : backFailed2;
+			if(Commander.result[0] == Commander.resultState.Succeed) character1.SetBool ("Succeed", true);
+			else character1.SetBool ("Failed", true);
+			if(Commander.result[1] == Commander.resultState.Succeed) character2.SetBool ("Succeed", true);
+			else character2.SetBool ("Failed", true);
             canvasAnim.SetTrigger("Transition");
 			yield return new WaitForSecondsRealtime(1);
             SceneManager.UnloadSceneAsync(mg.sceneName);

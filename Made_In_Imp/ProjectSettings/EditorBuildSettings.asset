@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Machigai/Machigai.unity
     guid: 7973662e41be9104cb7e81364b2a675f
+  - enabled: 1
+    path: Assets/YoJoBike/YojoBike.unity
+    guid: c3ed826ddaebc485c9cab9fe8506285b
