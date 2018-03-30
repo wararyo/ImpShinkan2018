@@ -9,12 +9,14 @@ public class ShieldRotate : MonoBehaviour {
 	public Transform shield;
 	public GameObject Explosion;
 	public GameObject zangai;
+	GameObject unsa;
 	bool destroy;
 	bool flag;
 	float count=0;
 
 	// Use this for initialization
 	void Start () {
+		Commander.onMinigameEnd += onMinigameEnd;
 		
 	}
 	
@@ -30,7 +32,7 @@ public class ShieldRotate : MonoBehaviour {
 			destroy = true;
 
 		if (destroy && !flag) {
-			Instantiate (zangai, shield.position, transform.rotation);
+			unsa = Instantiate (zangai, shield.position, transform.rotation);
 			Instantiate (Explosion, shield.position, transform.rotation);
 			transform.position = new Vector3 (114514, 0, 0);
 			flag = true;
@@ -46,5 +48,9 @@ public class ShieldRotate : MonoBehaviour {
 		else if (R)
 			angle = -speed;
 		transform.eulerAngles += angle * new Vector3 (0, 0, 1);
+	}
+
+	void onMinigameEnd(){
+		Destroy(unsa);
 	}
 }

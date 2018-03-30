@@ -11,6 +11,9 @@ public class EarthLREarth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Commander.onMinigameEnd += () => {
+			Commander.Succeed(Player-1);
+		};
 		SE = GetComponent<AudioSource> ();
 		if (gameObject.layer == 8)
 			SE.panStereo = -1;
