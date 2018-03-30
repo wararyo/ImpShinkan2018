@@ -32,6 +32,8 @@ public class TyakurikuManager : MonoBehaviour {
 
 		}
 
+
+
 		x2P = Input.GetAxisRaw ("2Horizontal");
        
 		if (tyakuriku2P == false) {
