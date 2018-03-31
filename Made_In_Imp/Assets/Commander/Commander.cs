@@ -16,6 +16,7 @@ public static class Commander {
 
 	public static Action onMinigameEnd = () => {};
 	public static Action onMinigameStart = () => {};
+	public static Action<int> onMinigameSucceed = (x) => {};
 
 	/// <summary>
 	/// 全体の初期化 スコアが0になります
@@ -55,6 +56,7 @@ public static class Commander {
 	public static void Succeed(int player) {
 		if (result [player] == resultState.Undefined) {
 			result [player] = resultState.Succeed;
+			onMinigameSucceed (player);
 			Debug.Log ((player + 1) + "Pが成功しました");
 		}
 	}

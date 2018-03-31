@@ -16,10 +16,15 @@ public class MainManager : MonoBehaviour {
     public Sprite backSucceed1, backFailed1, backSucceed2, backFailed2;
     public Image backLeft, backRight;
 	public Animator character1,character2;
+	public AudioSource se1, se2;
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (coroutineWork());
+		Commander.onMinigameSucceed += (p) => {
+			if(p == 0) se1.Play();
+			else se2.Play();
+		};
 	}
 	
 	// Update is called once per frame
