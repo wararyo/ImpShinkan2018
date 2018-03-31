@@ -26,11 +26,19 @@ public class MachigaiManager : MonoBehaviour {
         StartCoroutine(Move());
         StartCoroutine(Select());
         Commander.onMinigameEnd += () => {
-            if(!isSelected) Commander.Failed(playerNum);
-            StopAllCoroutines();
-            choices[nowChoice].StopAllCoroutines();
-            target.StopAllCoroutines();
+            if (!isSelected)
+            {
+                isSelected = true;
+                var ans = target.GetComponent<SpriteRenderer>().sprite;
+                var choice = choices[nowChoice].GetComponent<SpriteRenderer>().sprite;
+                if (ans == choice) OnClear();
+                else OnFailed();
+            }
+            //StopAllCoroutines();
+            //choices[nowChoice].StopAllCoroutines();
+            //target.StopAllCoroutines();
         };
+
     }
 	
 	// Update is called once per frame
