@@ -37,7 +37,7 @@ public class TyakurikuManager : MonoBehaviour {
 		x2P = Input.GetAxisRaw ("2Horizontal");
        
 		if (tyakuriku2P == false) {
-			direction = -1;
+			direction = 1;
 			ground2.RotateGround(direction);
 			player2.Rakka();
 			player2.MovePlayer (x2P);

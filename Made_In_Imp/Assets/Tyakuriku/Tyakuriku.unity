@@ -179,14 +179,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 9023249}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.4848096, w: 0.8746197}
   m_LocalPosition: {x: -7.9, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1508548913}
   m_Father: {fileID: 1526428662}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 58}
 --- !u!1 &19433404
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 59429472}
   - component: {fileID: 59429471}
   - component: {fileID: 59429473}
+  - component: {fileID: 59429474}
   m_Layer: 8
   m_Name: player1
   m_TagString: Untagged
@@ -455,7 +456,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 59429467}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -552,6 +553,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  seFailed: {fileID: 8300000, guid: e6477530a39fa433bb82d996c3d61766, type: 3}
   succeeded: {fileID: 21300000, guid: 71482d431e1ce4bc693ccd1149f5cf03, type: 3}
 --- !u!60 &59429471
 PolygonCollider2D:
@@ -781,6 +783,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &59429474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 59429467}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f971609ddafb4bc789e50989315fc81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &70291787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1091,7 @@ GameObject:
   - component: {fileID: 129462781}
   - component: {fileID: 129462780}
   - component: {fileID: 129462784}
+  - component: {fileID: 129462785}
   m_Layer: 9
   m_Name: player2
   m_TagString: Untagged
@@ -1286,6 +1306,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  seFailed: {fileID: 8300000, guid: e6477530a39fa433bb82d996c3d61766, type: 3}
   succeeded: {fileID: 21300000, guid: 71482d431e1ce4bc693ccd1149f5cf03, type: 3}
 --- !u!212 &129462783
 SpriteRenderer:
@@ -1411,6 +1432,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &129462785
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129462778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f971609ddafb4bc789e50989315fc81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &134734893
 GameObject:
   m_ObjectHideFlags: 0
@@ -6959,14 +6997,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2035447344}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.4848096, w: 0.8746197}
   m_LocalPosition: {x: -7.9, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 134734894}
   m_Father: {fileID: 651547002}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 58}
 --- !u!212 &2035447348
 SpriteRenderer:
   m_ObjectHideFlags: 0
