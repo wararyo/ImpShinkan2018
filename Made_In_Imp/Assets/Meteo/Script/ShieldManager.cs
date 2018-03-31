@@ -25,6 +25,14 @@ public class ShieldManager : MonoBehaviour {
 		Shield1.Role (L1, R1);
 		Shield2.Role (L2, R2);
 
+		Vector3 v1 = new Vector3(Input.GetAxis("1Horizontal"),Input.GetAxis("1Vertical"),0);
+		Vector3 v2 = new Vector3(Input.GetAxis("2Horizontal"),Input.GetAxis("2Vertical"),0);
 
+		if (v1.magnitude > 0.5) {
+			Shield1.transform.rotation = Quaternion.Lerp(Shield1.transform.rotation,Quaternion.FromToRotation (new Vector3(1.53f,1.28f,0), v1),0.15f);
+		}
+		if (v2.magnitude > 0.5) {
+			Shield2.transform.rotation = Quaternion.Lerp(Shield2.transform.rotation,Quaternion.FromToRotation (new Vector3(1.53f,1.28f,0), v2),0.15f);
+		}
 	}
 }
