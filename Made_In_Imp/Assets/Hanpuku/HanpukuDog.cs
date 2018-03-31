@@ -28,7 +28,10 @@ public class HanpukuDog : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var v = Input.GetAxis((playerNum + 1).ToString() + "Horizontal");
-
+		if (Input.GetButton ((playerNum + 1).ToString () + "L"))
+			v = -1;
+		else if(Input.GetButton ((playerNum + 1).ToString () + "R"))
+			v = 1;
         //向いている方向に対して逆方向の入力をした場合、跳ぶ！
 		if(!isJumping && !isClear && dir * v < 0) {
             StartCoroutine(Jump());
@@ -70,9 +73,9 @@ public class HanpukuDog : MonoBehaviour {
         while (!isClear) {
             Vector3 offset = Quaternion.Euler(Vector3.forward * Random.Range(0, 360)) * Vector3.up * 0.1f;
             transform.position += offset;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
             transform.position -= offset;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }
