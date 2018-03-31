@@ -19,7 +19,7 @@ public class HamburgerCatcher : MonoBehaviour {
 			v = -1.2f;
 		else if(Input.GetButton ((playerNum + 1).ToString () + "R"))
 			v = 1.2f;
-		v *= 0.4f;
+		v *= 0.3f;
         float pos_x = transform.position.x;
         if (Mathf.Abs(pos_x + v) > 4.8f) v = 0;
         transform.position += Vector3.right * v;

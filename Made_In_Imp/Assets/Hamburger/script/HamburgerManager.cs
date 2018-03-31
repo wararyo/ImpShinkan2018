@@ -46,7 +46,7 @@ public class HamburgerManager : MonoBehaviour {
         var col = obj.GetComponent<BoxCollider2D>();
 		sr.sortingOrder = 10 + layer;
         //具の大きさによって当たり判定調整
-        col.size = new Vector2(sr.bounds.size.x * 0.7f, sr.bounds.size.y * 0.7f);
+        col.size = new Vector2(sr.bounds.size.x * 0.75f, sr.bounds.size.y * 0.65f);
         col.offset += Vector2.up * sr.bounds.size.y * 0.2f;
         gu_set.Add(col.GetComponent<HamburgerGu>());
     }
