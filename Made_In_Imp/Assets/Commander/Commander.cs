@@ -24,6 +24,7 @@ public static class Commander {
     public static void Initialize()
     {
         ResetResultState();
+		onMinigameSucceed = (x) => {};
         for (int i = 0; i < score.Length; i++)
         {
             score[i] = 0;
