@@ -25,11 +25,20 @@ public class YojoBikeManager : MonoBehaviour {
 		x1 = Input.GetAxisRaw ("1Horizontal");
 		x2 = Input.GetAxisRaw ("2Horizontal");
 
+		if (Input.GetButtonDown ("1L"))
+			yojo1.MoveYojo (-1);
+		if (Input.GetButtonDown ("1R"))
+			yojo1.MoveYojo (1);
+		if (Input.GetButtonDown ("2L"))
+			yojo2.MoveYojo (-1);
+		if (Input.GetButtonDown ("2R"))
+			yojo2.MoveYojo (1);
+
+		if(x1Before==0 && x1!=0){
+			yojo1.MoveYojo (x1);
+		}
 		if (isRunning1 == true) {
 			back1.SpeedUp ();
-			if(x1Before==0 && x1!=0){
-				yojo1.MoveYojo (x1);
-			}
 		} else if (succeed == true) {
 			back1.SpeedDown ();
 		} else {
@@ -38,11 +47,11 @@ public class YojoBikeManager : MonoBehaviour {
 
 		back1.MoveBackGround ();
 
+		if (x2Before == 0 && x2 != 0) {
+			yojo2.MoveYojo (x2);
+		}
 		if (isRunning2 == true) {
 			back2.SpeedUp ();
-			if (x2Before == 0 && x2 != 0) {
-				yojo2.MoveYojo (x2);
-			}
 		} else if (succeed == true) {
 			back2.SpeedDown ();
 		} else {
