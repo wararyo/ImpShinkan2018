@@ -38,7 +38,7 @@ public class EarthEarth : MonoBehaviour {
 	}
 
 	public void move (float x, float y){
-		if(!dead) transform.position += new Vector3 (x*0.2f, y*0.2f, 0);
+		if(!dead) transform.position += new Vector3 (x*0.15f, y*0.15f, 0);
 	}
 
 	void onMinigameEnd(){

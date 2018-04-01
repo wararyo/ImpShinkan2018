@@ -26,6 +26,7 @@ public class ResultManager : MonoBehaviour {
                 drumRoll.Play();
                 break;
 			case 1:
+				drumRoll.Stop ();
 				score1P.setScore (Commander.score [0]);
 				score2P.setScore (Commander.score [1]);
 				g.alpha = 1;

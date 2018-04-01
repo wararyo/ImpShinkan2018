@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteo: {fileID: 1831668101291438, guid: b518e35cada424815aa261ded1f47fa1, type: 2}
-  meteoMAX: 3
-  FirstDelayTime: 1
+  meteoMAX: 2
+  FirstDelayTime: 2
 --- !u!4 &45910238 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4606730249764068, guid: 1c1682b09fdb94067811c0cdd0698cee,

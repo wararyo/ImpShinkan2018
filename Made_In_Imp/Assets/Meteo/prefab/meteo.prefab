@@ -173,7 +173,7 @@ MonoBehaviour:
   start: {x: 0, y: 0}
   aim: {x: 0, y: 0}
   angle: {x: 0, y: 0}
-  speed: 0.07
+  speed: 0.06
   aim_range: 3
 --- !u!212 &212069749616947704
 SpriteRenderer:
