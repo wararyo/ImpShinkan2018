@@ -14,3 +14,4 @@ MonoBehaviour:
   name: "\u5E7C\u5973\u30D0\u30A4\u30AF"
   orderImage: {fileID: 21300000, guid: 38df302797bf74c4ab9ea946a596721b, type: 3}
   sceneName: YojoBike
+  buttonUsage: 2

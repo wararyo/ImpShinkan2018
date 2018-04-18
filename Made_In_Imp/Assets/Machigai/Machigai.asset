@@ -14,3 +14,4 @@ MonoBehaviour:
   name: "\u540C\u3058\u306E\u898B\u3064\u3051\u308B\u3084\u3064"
   orderImage: {fileID: 21300000, guid: 29b711afdb48745e5bf32765f69f6145, type: 3}
   sceneName: Machigai
+  buttonUsage: 2

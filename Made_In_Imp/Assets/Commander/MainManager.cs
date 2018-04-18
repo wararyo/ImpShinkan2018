@@ -17,6 +17,8 @@ public class MainManager : MonoBehaviour {
     public Image backLeft, backRight;
 	public Animator character1,character2;
 	public AudioSource se1, se2;
+    public Sprite A, Cross, Horizontal;
+    public Image buttonImage;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +51,11 @@ public class MainManager : MonoBehaviour {
             gameCount.text = i.ToString();
             orderImage.sprite = mg.orderImage;
 
-			character1.SetBool ("Succeed", false);
+            if (mg.buttonUsage == MiniGame.ButtonUsage.A) buttonImage.sprite = A;
+            else if (mg.buttonUsage == MiniGame.ButtonUsage.Horizontal) buttonImage.sprite = Horizontal;
+            else if (mg.buttonUsage == MiniGame.ButtonUsage.Cross) buttonImage.sprite = Cross;
+
+            character1.SetBool ("Succeed", false);
 			character2.SetBool ("Succeed", false);
 			character1.SetBool ("Failed", false);
 			character2.SetBool ("Failed", false);

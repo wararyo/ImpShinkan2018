@@ -10,7 +10,7 @@ public class MachigaiManager : MonoBehaviour {
     List<MachigaiChoice> choices = new List<MachigaiChoice>();
     MachigaiTarget target;
     public List<Sprite> types_g = new List<Sprite>();
-    public GameObject target_obj, choice_obj;
+    public GameObject target_obj, choice_obj, hand_obj;
     int nowChoice = 2;
     bool isSelected = false;
     public AudioClip ok_m, ng_m;
@@ -66,6 +66,7 @@ public class MachigaiManager : MonoBehaviour {
             if (prevInput == 0 && v != 0) {
                 choices[nowChoice].OnReleased();
                 nowChoice = (int)Mathf.Max(Mathf.Min(nowChoice + v, 4), 0);
+                hand_obj.transform.position += new Vector3(v*1.6f,0,0);
                 choices[nowChoice].OnChoiced();
             }
             prevInput = v;

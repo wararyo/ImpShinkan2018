@@ -20,6 +20,6 @@ public class Ground : MonoBehaviour {
 
 	public void RotateGround(float direction)
     {
-        ground.transform.Rotate(rotateAngle*direction);
+        ground.transform.Rotate(rotateAngle*direction*Time.deltaTime);
     }
 }
